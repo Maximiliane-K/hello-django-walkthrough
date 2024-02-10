@@ -13,9 +13,11 @@
                     {% if item.done %}
                         <td><strike>{{ item.name}}</strike></td>
                     {% else %}
-                        <td>{{} iten.name}</td>
+                        <td>{{ item.name }}</td>
                     {% endif %}
                 </tr>
+            {% empty %}
+            <tr><td>You have nothing to do.</td></tr>
             {% endfor %}
         </table>
     </body>
