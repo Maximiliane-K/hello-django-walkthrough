@@ -10,7 +10,6 @@ def get_todo_list(request):
     }
     return render(request, 'todo/todo_list.html', context)
 
-
 def add_item(request):
     if request.method == 'POST':
         form = ItemForm (request.POST)
@@ -22,7 +21,6 @@ def add_item(request):
         'form': form
     }
     return render(request, 'todo/add_item.html', context)
-
 
 def edit_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
@@ -36,7 +34,6 @@ def edit_item(request, item_id):
         'form': form
     }
     return render(request, 'todo/edit_item.html', context)
-
 
 def toggle_item(request, item_id):
     item = get_object_or_404(Item, id=item_id)
